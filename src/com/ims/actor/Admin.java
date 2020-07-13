@@ -1,5 +1,7 @@
 package com.ims.actor;
 
+import com.ims.data.SupplierHolder;
+
 public class Admin {
     private int id;
     private String name;
@@ -29,11 +31,13 @@ public class Admin {
 
     public void addSupplier() {
         int id =storeSupplier(supplier);
-        supplier.id=id;
+        supplier.setId(id);
         mapSupplier(supplier);
     }
 
     private int storeSupplier(Supplier supplier) {
+        SupplierHolder supplierHolder = new SupplierHolder();
+        supplierHolder.saveSupplier(supplier);
         return -1;
     }
 
