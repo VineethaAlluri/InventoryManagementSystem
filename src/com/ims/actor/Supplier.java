@@ -3,22 +3,16 @@ package com.ims.actor;
 public class Supplier {
     int id;
     String name;
-    String buildingNumber;
-    String streetName;
-    String city;
-    int pincode;
+    Address address;
 
     Supplier(){
         System.out.println("Inventory Manager Constructed !!");
     }
 
-    Supplier(String name, String buildingNumber, String streetName, String city, int pincode){
+    Supplier(String name, Address address){
         this();
         this.name = name;
-        this.buildingNumber = buildingNumber;
-        this.streetName = streetName;
-        this.city = city;
-        this.pincode = pincode;
+        this.address = address;
         System.out.println("Assignments Done");
     }
 }
