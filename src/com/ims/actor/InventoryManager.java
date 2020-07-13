@@ -1,32 +1,37 @@
 package com.ims.actor;
 
 public class InventoryManager {
-    int id;
-    String name;
-    String buildingNumber;
-    String streetName;
-    String city;
-    int pincode;
+    private int id;
+    private String name;
+    private Address address;
 
     InventoryManager(){
         System.out.println("Inventory Manager Constructed !!");
     }
 
-    InventoryManager(String name, String buildingNumber, String streetName, String city, int pincode){
+    InventoryManager(String name, Address address){
         this();
-        this.name = name;
-        this.buildingNumber = buildingNumber;
-        this.streetName = streetName;
-        this.city = city;
-        this.pincode = pincode;
+        setName(name);
+        setAddress(address);
         System.out.println("Assignments Done");
     }
-
-    void test() {
-      this.callMe();
+    public int getId() {
+        return id;
     }
-    void callMe() {
-
+    public String getName() {
+        return name;
+    }
+    public Address getAddress() {
+        return address;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setAddress(Address address) {
+        this.address = address;
     }
     void checkProfileDashboard(){
         System.out.println("Please selection an option : ");
