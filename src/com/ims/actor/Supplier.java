@@ -5,11 +5,11 @@ public class Supplier {
     String name;
     Address address;
 
-    Supplier(){
+    public Supplier(){
         System.out.println("Inventory Manager Constructed !!");
     }
 
-    Supplier(String name, Address address){
+    public Supplier(String name, Address address){
         this();
         this.name = name;
         this.address = address;
