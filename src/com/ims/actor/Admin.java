@@ -7,7 +7,8 @@ public class Admin {
     String streetName;
     String city;
     int pincode;
-    Supplier supplier[] = new Supplier[1000];
+    Supplier suppliers[] = new Supplier[1000];
+    Supplier supplier;
 
     Admin(){
         System.out.println("Admin Constructed !!");
@@ -26,7 +27,17 @@ public class Admin {
         System.out.println("Press 1 for Viewing profile details");
     }
 
-    void addSupplier() {
+    public void addSupplier() {
+        int id =storeSupplier(supplier);
+        supplier.id=id;
+        mapSupplier(supplier);
+    }
+
+    private int storeSupplier(Supplier supplier) {
+        return -1;
+    }
+
+    private void mapSupplier(Supplier supplier) {
 
     }
     String getName(){
