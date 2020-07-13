@@ -1,8 +1,8 @@
 package com.ims.actor;
 
 public class Admin {
-    int id;
-    String name;
+    private int id;
+    private String name;
     String buildingNumber;
     String streetName;
     String city;
@@ -15,7 +15,7 @@ public class Admin {
     }
 
     Admin(String n, String bn, String sn, String c, int pc){
-        name = n;
+        setName(n);
         buildingNumber = bn;
         streetName = sn;
         city = c;
@@ -40,7 +40,22 @@ public class Admin {
     private void mapSupplier(Supplier supplier) {
 
     }
-    String getName(){
+    public String getName(){
         return name;
+    }
+
+    public void setName(String name) {
+        if(name == null || name == "") {
+
+        }
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
