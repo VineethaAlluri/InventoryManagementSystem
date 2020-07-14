@@ -20,6 +20,9 @@ public class Admin extends SystemUser{
     }
 
     void checkProfileDashboard(){
+        if(loggedIn == false) {
+            System.out.println("Please login first");
+        }
         System.out.println("Please selection an option : ");
         System.out.println("Press 1 for Viewing profile details");
     }
