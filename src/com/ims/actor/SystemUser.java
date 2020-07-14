@@ -5,6 +5,10 @@ public class SystemUser {
     private String name;
     private Address address;
 
+    public SystemUser() {
+
+    }
+
     public int getId() {
         return id;
     }

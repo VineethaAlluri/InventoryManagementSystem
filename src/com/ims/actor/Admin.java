@@ -8,11 +8,12 @@ public class Admin extends SystemUser{
     private static int supCount =0;
 
     public Admin(){
+        super();
         System.out.println("Admin Constructed !!");
     }
 
     public Admin(String name, Address address){
-        this();
+        super();
         setName(name);
         setAddress(address);
         System.out.println("Assignments Done");
