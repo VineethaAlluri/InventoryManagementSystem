@@ -19,6 +19,11 @@ public class Admin extends SystemUser{
         System.out.println("Assignments Done");
     }
 
+    public Admin(Address address, String name) {
+        setName(name);
+        setAddress(address);
+    }
+
     void checkProfileDashboard(){
         if(loggedIn == false) {
             System.out.println("Please login first");
