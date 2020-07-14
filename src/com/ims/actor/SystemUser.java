@@ -16,6 +16,12 @@ public abstract class SystemUser {
         loggedIn = false;
         return false;
     }
+
+    public void logout() {
+        loggedIn=false;
+        System.out.println("User :"+name+" logged out successfully!");
+    }
+
     public int getId() {
         return id;
     }

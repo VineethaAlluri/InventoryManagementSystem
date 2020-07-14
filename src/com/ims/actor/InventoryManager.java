@@ -1,12 +1,13 @@
 package com.ims.actor;
-
+import com.ims.data.OrderHolder;
+import com.ims.entity.Order;
 public class InventoryManager extends SystemUser{
 
-    InventoryManager(){
+    public InventoryManager(){
         System.out.println("Inventory Manager Constructed !!");
     }
 
-    InventoryManager(String name, Address address) {
+    public InventoryManager(String name, Address address) {
         this();
         setName(name);
         setAddress(address);
@@ -27,5 +28,12 @@ public class InventoryManager extends SystemUser{
         }
         loggedIn = false;
         return false;
+    }
+
+    public Order placeOrder(Integer productId, Integer quantity, Supplier supplier) {
+        Order order = new Order(productId,quantity,this,supplier);
+        Order savedOrder = OrderHolder.save(order);
+        System.out.println("Order placed with id:"+savedOrder.getId());
+        return order;
     }
 }

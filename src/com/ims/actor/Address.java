@@ -6,11 +6,11 @@ public class Address {
     String city;
     int pincode;
 
-    Address(){
+    public Address(){
         System.out.println("Address Constructed !!");
     }
 
-    Address(String buildingNumber, String streetName, String city, int pincode) {
+    public Address(String buildingNumber, String streetName, String city, int pincode) {
         this.buildingNumber = buildingNumber;
         this.streetName = streetName;
         this.city = city;
