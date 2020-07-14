@@ -2,27 +2,20 @@ package com.ims.actor;
 
 import com.ims.data.SupplierHolder;
 
-public class Admin {
-    private int id;
-    private String name;
-    String buildingNumber;
-    String streetName;
-    String city;
-    int pincode;
+public class Admin extends SystemUser{
+
     Supplier suppliers[] = new Supplier[1000];
-    Supplier supplier;
     private static int supCount =0;
 
-    Admin(){
+    public Admin(){
         System.out.println("Admin Constructed !!");
     }
 
-    Admin(String n, String bn, String sn, String c, int pc){
-        setName(n);
-        buildingNumber = bn;
-        streetName = sn;
-        city = c;
-        pincode = pc;
+    public Admin(String name, Address address){
+        this();
+        setName(name);
+        setAddress(address);
+        System.out.println("Assignments Done");
     }
 
     void checkProfileDashboard(){
@@ -30,7 +23,7 @@ public class Admin {
         System.out.println("Press 1 for Viewing profile details");
     }
 
-    public void addSupplier() {
+    public void addSupplier(Supplier supplier) {
         int id =storeSupplier(supplier);
         supplier.setId(id);
         mapSupplier(supplier);
@@ -44,23 +37,5 @@ public class Admin {
     private void mapSupplier(Supplier supplier) {
         suppliers[supCount] = supplier;
         supCount = supCount +1;
-    }
-    public String getName(){
-        return name;
-    }
-
-    public void setName(String name) {
-        if(name == null || name == "") {
-
-        }
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }
