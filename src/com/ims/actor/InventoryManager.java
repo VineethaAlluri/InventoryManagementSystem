@@ -1,16 +1,23 @@
 package com.ims.actor;
 import com.ims.data.OrderHolder;
 import com.ims.entity.Order;
-public class InventoryManager extends SystemUser{
+import com.ims.service.DashboardNotificationService;
+import com.ims.service.INotificationService;
+
+public class InventoryManager extends SystemUser {
+    private INotificationService notificationService;
 
     public InventoryManager(){
+
         System.out.println("Inventory Manager Constructed !!");
+        notificationService = new DashboardNotificationService();
     }
 
     public InventoryManager(String name, Address address) {
         this();
         setName(name);
         setAddress(address);
+        notificationService = new DashboardNotificationService();
         System.out.println("Assignments Done");
     }
 
@@ -33,7 +40,13 @@ public class InventoryManager extends SystemUser{
     public Order placeOrder(Integer productId, Integer quantity, Supplier supplier) {
         Order order = new Order(productId,quantity,this,supplier);
         Order savedOrder = OrderHolder.save(order);
+        notificationService.notify(this.getId(),supplier.getId(),"An order has been placed");
+        System.out.println("Notification sent");
         System.out.println("Order placed with id:"+savedOrder.getId());
         return order;
+    }
+
+    public void setNotificationService(INotificationService notifService) {
+        notificationService = notifService;
     }
 }
