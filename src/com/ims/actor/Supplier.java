@@ -11,4 +11,14 @@ public class Supplier extends SystemUser{
         setAddress(address);
         System.out.println("Assignments Done");
     }
+
+    @Override
+    public boolean login(String userName,String password) {
+        if(("supplier").equalsIgnoreCase(userName) && ("supplier").equalsIgnoreCase(password)) {
+            loggedIn = true;
+            return true;
+        }
+        loggedIn = false;
+        return false;
+    }
 }

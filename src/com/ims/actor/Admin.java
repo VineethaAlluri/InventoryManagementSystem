@@ -24,10 +24,7 @@ public class Admin extends SystemUser{
         setAddress(address);
     }
 
-    void checkProfileDashboard(){
-        if(loggedIn == false) {
-            System.out.println("Please login first");
-        }
+    public void checkProfileDashboard() {
         System.out.println("Please selection an option : ");
         System.out.println("Press 1 for Viewing profile details");
     }
@@ -46,5 +43,15 @@ public class Admin extends SystemUser{
     private void mapSupplier(Supplier supplier) {
         suppliers[supCount] = supplier;
         supCount = supCount +1;
+    }
+
+    @Override
+    public boolean login(String userName,String password) {
+        if(("admin").equalsIgnoreCase(userName) && ("admin").equalsIgnoreCase(password)) {
+            loggedIn = true;
+            return true;
+        }
+        loggedIn = false;
+        return false;
     }
 }
