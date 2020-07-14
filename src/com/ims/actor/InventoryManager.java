@@ -13,10 +13,12 @@ public class InventoryManager extends SystemUser{
         System.out.println("Assignments Done");
     }
 
-    public void checkProfileDashboard(){
-        System.out.println("Please selection an option : ");
-        System.out.println("Press 1 for Viewing profile details");
+    public void checkProfileDashboard() {
+        System.out.println("Please press: ");
+        System.out.println("4 for logout");
+        System.out.println("6 placing order");
     }
+
     @Override
     public boolean login(String userName,String password) {
         if(("inventoryManager").equalsIgnoreCase(userName) && ("inventoryManager").equalsIgnoreCase(password)) {

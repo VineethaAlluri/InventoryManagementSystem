@@ -1,6 +1,6 @@
 package com.ims.actor;
 
-public class SystemUser {
+public abstract class SystemUser {
     private int id;
     private String name;
     private Address address;
@@ -9,7 +9,7 @@ public class SystemUser {
 
     }
     public boolean login(String userName,String password) {
-        if(("systemUser").equalsIgnoreCase(userName) && ("systemuser").equalsIgnoreCase(password)) {
+        if(("systemUser").equalsIgnoreCase(userName) && ("systemUser").equalsIgnoreCase(password)) {
             loggedIn = true;
             return true;
         }
@@ -36,7 +36,5 @@ public class SystemUser {
     public void setAddress(Address address) {
         this.address = address;
     }
-    public void checkProfileDashboard() {
-        System.out.println("Please press 1 for user details");
-    }
+    public abstract void checkProfileDashboard() ;
 }

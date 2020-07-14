@@ -25,8 +25,12 @@ public class Admin extends SystemUser{
     }
 
     public void checkProfileDashboard() {
-        System.out.println("Please selection an option : ");
-        System.out.println("Press 1 for Viewing profile details");
+        System.out.println("Please press: ");
+        System.out.println("4 for logout");
+        System.out.println("7 adding a inventory Manager");
+        System.out.println("8 checking inventory managers");
+        System.out.println("9 adding a supplier");
+        System.out.println("10 for checking supplier");
     }
 
     public void addSupplier(Supplier supplier) {
